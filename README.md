@@ -1,9 +1,9 @@
-# Boilder plate for install WordPress in Docker with nginx
+# Boilder plate for setting up a WordPress site in Docker with nginx
 
 ## Before Start
-1. Install docker desktop application in your computer.
-2. Install brew.
-3. Install mkcert globally: `brew install mkcert` and `brew install nss`.
+* Install docker desktop application in your computer.
+* Install brew. This is for installing mkcert. You can also use Curl.
+* Install mkcert globally: `brew install mkcert` and `brew install nss`. The first command installs mkcert. The second command installs a certutil to allow Firefox to trust the CA.
 
 ## Steps
 1. Clone this repo to your local computer. Rename the root folder to your project name.
