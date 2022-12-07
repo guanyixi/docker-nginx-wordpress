@@ -1,4 +1,4 @@
-# Boilder plate for setting up a WordPress site in Docker with nginx
+# Boilerplate for setting up a WordPress site in Docker with nginx
 
 ## Before Start
 * Install docker desktop application in your computer.
