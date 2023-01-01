@@ -16,9 +16,9 @@ https://www.youtube.com/watch?v=kIqWxjDj4IU
 5. Change the domain names in /nginx/default.conf from sitename.dev to yoursitename.dev.
 6. Stop other containers in Docker Desktop that use the same port, cd into the root folder and run `docker-compose up -d --build`. This will build the container and start the container. After this, you should see a new directory /mysql/ in the root folder.
 7. Add the domain to the host file by running `sudo code /etc/hosts` (for VSCODE), then add `127.0.0.1	yoursitename.dev` to the host file and save.
-8. Visit https://yoursitename.dev and go through the installation process. ** The Database Host should be the server name: 'mysql', not 'localhost' **.
+8. Visit https://yoursitename.dev and go through the installation process. **The Database Host should be the server name: 'mysql', not 'localhost'**.
 9. Now the site should be up and running with SSL.
-10. Connect to the database (Sequal Ace): Values should match docker-compose.yml
+10. Connect to the database (Sequal Ace): Values should match docker-compose.yml. The docker container should be up and running when trying to connect to the database.
 > * Host: 127.0.0.1
 > * Username: yourusername
 > * Password: yourpassword
@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=kIqWxjDj4IU
 
 
 ## Notes
-* When building containers with custom configurations, you can't use images directly in the yaml file. Instead, you need to use docker files for the configurations. Eg. nginx.dockerfile, php.dockerfile. For building containers like this, you need to run `docker-compose build` instead of `docker-compose up`. You can also just run `docker-compose up -d --build` to build and start the container at the same time.
+* When building containers with custom configurations, you can't use images directly in the yaml file. Instead, you need to use docker files for the configurations. Eg. nginx.dockerfile, php.dockerfile. When building containers with dockerfiles, you need to run `docker-compose build` instead of `docker-compose up`. You can also just run `docker-compose up -d --build` to build and start the container at the same time.
 * The /mysql/ directory is to store the mysql volume, so when you stop the container, you won't lose any data.
 * in docker-compose.yml `platform: linux/x86_64` is used to avoid error "no matching manifest for linux/arm64/v8 in the manifest list entries" when building the container. This happens when you are using a Mac with M1 chip.
-* Your database root password can not be "root". Otherwise it will cause error Access denied for user 'root'@'172.27.0.1’ when trying to connect the database.
+* Your database root password can not be "root". Otherwise you will get error Access denied for user 'root'@'172.27.0.1’ when trying to connect the database.
