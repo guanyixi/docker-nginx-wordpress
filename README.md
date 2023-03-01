@@ -7,6 +7,7 @@ https://www.youtube.com/watch?v=kIqWxjDj4IU
 * Install docker desktop application in your computer.
 * Install brew. This is for installing mkcert. You can also use Curl to install mkcert.
 * Install mkcert globally: `brew install mkcert` and `brew install nss`. The first command installs mkcert. The second command installs a certutil to allow Firefox to trust the CA.
+* Run `mkcert -install`. This will create the local certificate authority.
 
 ## Steps
 1. Clone this repo to your local computer. Rename the folder to your project name.
